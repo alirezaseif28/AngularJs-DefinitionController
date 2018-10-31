@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<style>
+       table, th , td  {
+         border: 1px solid grey;
+         border-collapse: collapse;
+         padding: 5px;
+       }
+       table tr:nth-child(odd) {
+         background-color: #f1f1f1;
+       }
+       table tr:nth-child(even) {
+         background-color: #ffffff;
+       }
+    </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="MyApp" ng-controller="MyCtrl">
+<span>Name </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="Name" />
+<br /><br />
+<span>Family </span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="Family" />
+<button type="button" ng-click="Save()">Save</button>
+<br />
+<br />
+
+<hr />
+<br />
+<table>
+  <tr>
+    <td>#</td>
+    <td>Name</td>
+    <td>Family</td>
+  </tr>
+  <tr ng-repeat="item in NameList">
+    <td>{{ $index + 1 }}</td>
+    <td>{{ item.Name }}</td>
+    <td>{{ item.Family }}</td>
+  </tr>
+</table>
+</div>
+<script src="MyCtrl.js"></script>
+</body>
+</html>
